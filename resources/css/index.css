@@ -25,7 +25,10 @@ h6 {
 #profile-name {
   font-weight: 800;
 }
-
+#profile-description{
+    font-style: oblique;
+    font-size: large;
+}
 #app {
   width: 100%;
   height: 100vh;
@@ -47,18 +50,16 @@ h6 {
 }
 
 #content-1{
-   background-color: #015ca9;
-  
+  background-color: #151515;
+  color: white;
 }
 #content-2{
-  background-color: #151515
-}
-#content-3{
-  background-color: #54E6C7;
-  
-}
-#content-4{
   background-color: grey;
+}
+
+#music{
+    display: flex;
+    align-self: center;
 }
 
 .content-section {
