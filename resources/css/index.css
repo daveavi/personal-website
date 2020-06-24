@@ -4,6 +4,78 @@
   background-color: grey;
 }
 
+.wrapper{
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 550px;
+    transform: translate(-50%,-50%); */
+    justify-content: flex-end;
+    margin-top:20px;
+
+}
+
+.wrapper ul{
+    list-style: none;
+}
+
+.wrapper ul li{
+    width: 75px;
+    height: 75px;
+    line-height: 75px;
+    margin: 0 10px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 5px solid #444c47;
+    float: left;
+    transition: all 0.5s ease;
+}
+
+.wrapper ul li .fa{
+    color: #444c47;
+    margin-top: 20px;
+    transition: all 0.5s ease;
+}
+
+.wrapper ul li:hover.github{
+    border: 5px solid  #3b5998;
+    box-shadow: 0 0 15px  #3b5998;
+    transition: all 0.5s ease;
+}
+
+.wrapper ul li:hover .fa-github{
+    color: #3b5998;
+    text-shadow: 0 0 15px #3b5998;
+    transition: all 0.5s ease;
+}
+
+.wrapper ul li:hover:linkedin{
+    border: 5px solid  #00aced;
+    box-shadow: 0 0 15px  #00aced;
+    transition: all 0.5s ease;
+}
+
+.wrapper ul li:hover .fa-linkedin{
+    color: #00aced;
+    text-shadow: 0 0 15px #00aced;
+    transition: all 0.5s ease;
+}
+
+.wrapper ul li:hover:soundcloud{
+    border: 5px solid orange;
+    box-shadow: 0 0 15px orange;
+    transition: all 0.5s ease;
+}
+
+.wrapper ul li:hover .fa-soundcloud{
+    color:orange;
+    text-shadow: 0 0 15px orange;
+    transition: all 0.5s ease;
+}
+
+
+
 body {
   font-family: "Lato", sans-serif;
 }
