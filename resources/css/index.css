@@ -5,14 +5,9 @@
 }
 
 .wrapper{
-    /* position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 550px;
-    transform: translate(-50%,-50%); */
-    justify-content: flex-end;
+    display:flex;
+    justify-content: flex-start;
     margin-top:20px;
-
 }
 
 .wrapper ul{
@@ -27,54 +22,56 @@
     text-align: center;
     cursor: pointer;
     border-radius: 50%;
-    border: 5px solid #444c47;
+    /* border: 5px solid ;  */
     float: left;
     transition: all 0.5s ease;
 }
 
-.wrapper ul li .fa{
-    color: #444c47;
-    margin-top: 20px;
-    transition: all 0.5s ease;
-}
 
 .wrapper ul li:hover.github{
-    border: 5px solid  #3b5998;
-    box-shadow: 0 0 15px  #3b5998;
+    border: 5px solid black;
+    box-shadow: 0 0 15px  ;
     transition: all 0.5s ease;
 }
 
 .wrapper ul li:hover .fa-github{
-    color: #3b5998;
-    text-shadow: 0 0 15px #3b5998;
+    color: black;
+    text-shadow: 0 0 15px black;
+    margin-top: 10px;
     transition: all 0.5s ease;
 }
 
-.wrapper ul li:hover:linkedin{
-    border: 5px solid  #00aced;
-    box-shadow: 0 0 15px  #00aced;
+.wrapper ul li:hover.linkedin{
+    border: 5px solid  #2867B2;
+    box-shadow: 0 0 15px  #2867B2;
     transition: all 0.5s ease;
 }
 
 .wrapper ul li:hover .fa-linkedin{
-    color: #00aced;
-    text-shadow: 0 0 15px #00aced;
+    color:#2867B2;
+    text-shadow: 0 0 15px #2867B2;
+    margin-top: 10px;
     transition: all 0.5s ease;
 }
 
-.wrapper ul li:hover:soundcloud{
-    border: 5px solid orange;
-    box-shadow: 0 0 15px orange;
+.wrapper ul li:hover.soundcloud{
+    border: 5px solid #ff7700;
+    box-shadow: 0 0 15px #ff7700;
     transition: all 0.5s ease;
 }
 
 .wrapper ul li:hover .fa-soundcloud{
-    color:orange;
-    text-shadow: 0 0 15px orange;
+    color:#ff7700;
+    text-shadow: 0 0 15px #ff7700;
+    margin-top: 10px;
     transition: all 0.5s ease;
 }
 
 
+
+#resume{
+    margin-top:20px;
+}
 
 body {
   font-family: "Lato", sans-serif;
