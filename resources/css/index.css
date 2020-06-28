@@ -15,9 +15,9 @@
 }
 
 .wrapper ul li{
-    width: 75px;
-    height: 75px;
-    line-height: 75px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
     margin: 0 10px;
     text-align: center;
     cursor: pointer;
@@ -30,7 +30,7 @@
 }
 
 .wrapper ul li:hover.github{
-    border: 5px solid black;
+    border: 2px solid black;
     box-shadow: 0 0 15px  ;
     transition: all 0.5s ease;
 }
@@ -43,7 +43,7 @@
 }
 
 .wrapper ul li:hover.linkedin{
-    border: 5px solid  #2867B2;
+    border: 2px solid  #2867B2;
     box-shadow: 0 0 15px  #2867B2;
     transition: all 0.5s ease;
 }
@@ -56,7 +56,7 @@
 }
 
 .wrapper ul li:hover.soundcloud{
-    border: 5px solid #ff7700;
+    border: 2px solid #ff7700;
     box-shadow: 0 0 15px #ff7700;
     transition: all 0.5s ease;
 }
@@ -68,7 +68,31 @@
     transition: all 0.5s ease;
 }
 
+.button {
+  width: 140px;
+  height: 45px;
+  font-family: "Lato", sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  }
 
+.button:hover {
+  background-color: rgb(46, 144, 229);
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+  border: none;
+}
 
 #resume{
     margin-top:20px;
@@ -95,6 +119,60 @@ h6 {
 #profile-name {
   font-weight: 800;
 }
+
+@keyframes fadeInLeft {
+    from {
+        opacity:0;
+        -webkit-transform: translatex(-100px);
+        -moz-transform: translatex(-100px);
+        -o-transform: translatex(-100px);
+        transform: translatex(-100px);
+    }
+    to {
+        opacity:1;
+        -webkit-transform: translatex(0);
+        -moz-transform: translatex(0);
+        -o-transform: translatex(0);
+        transform: translatex(0);
+    }
+}
+.in-left {
+    -webkit-animation-name: fadeInLeft;
+    -moz-animation-name: fadeInLeft;
+    -o-animation-name: fadeInLeft;
+    animation-name: fadeInLeft;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 0.5s;
+    -moz-animation-duration: 0.5s;
+    -o-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-delay: 0.5s;
+    -moz-animation-delay: 0.5s;
+    -o-animation-duration:0.5s;
+    animation-delay: 0.5s;
+}
+.in-left2{
+  -webkit-animation-name: fadeInLeft;
+  -moz-animation-name: fadeInLeft;
+  -o-animation-name: fadeInLeft;
+  animation-name: fadeInLeft;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  -o-animation-duration:1s;
+  animation-delay: 1s;
+}
+
 #profile-description{
     font-style: oblique;
     font-size: large;
