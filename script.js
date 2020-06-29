@@ -1,5 +1,5 @@
 // Little Canvas things
-var canvas = document.querySelector("#canvas"),
+var canvas = document.querySelector("#content-1"),
 ctx = canvas.getContext('2d');
 
 // Set Canvas to be window size
@@ -148,7 +148,6 @@ var myStopFunction = function() {
 //frame();
 setTimeout("myStopFunction()",20000);
 cleanUpArray();
-clear
-  
+
 
 

@@ -4,8 +4,10 @@
         <title>Avi Dave</title>
     </head>
     <link href="./resources/css/index.css" type="text/css" rel="stylesheet">
-    <link href="./resources/css/animate.css" type="text/css" rel="stylesheet">
+    <!-- <link href="./resources/css/animate.css" type="text/css" rel="stylesheet"> -->
     
+    <link href='https://fonts.googleapis.com/css?family=Megrim' rel='stylesheet' type='text/css'>
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -43,20 +45,22 @@
     
       
         <div id="content">
-          <canvas class="content-section" id="content-1">
-            <h1 id="music" class="display-4">Music</h1>
+          <canvas class="content-section" id="content-1"></canvas>
+            <!-- <h1 id="music" class="display-4">Music</h1>
+            <h1>Click Anywhere</h1> -->
                 <!-- <h3 id="exp">Work</h3>
                 <h3 id="exp">Volunteering</h3> -->
-          </canvas>
-          
-          <div class="content-section" id="content-2">
+              <button onClick="expandCanvas()">    
+                <h1 id="music" class="animate__animated animate__fadeIn animate__delay-2s">Journeys</h1>
+              </button>
+          <!-- <div class="content-section" id="content-2">
             <h1 id="projects" class="display-4">About me!</h1>
-          </div>
+          </div> -->
 
 
     </div>
       
-
+    <script  src="./script.js"></script>
 
   </body>
 </html>
