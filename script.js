@@ -2,7 +2,12 @@
 var canvas = document.querySelector("#content-1"),
 ctx = canvas.getContext('2d');
 
-// Set Canvas to be window size
+
+
+
+// canvas.width = parent.offsetWidth;
+// canvas.height = parent.offsetHeight;
+// // // Set Canvas to be window size
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
@@ -142,6 +147,7 @@ var showParticles = function () {
 // Click listener
 var expandCanvas = function (){
   //  document.querySelector("content").css("width", "100");
+  document.getElementById("content").style.width= 100;
 };
 
 frame();
