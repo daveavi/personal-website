@@ -177,6 +177,7 @@ h6 {
     font-style: oblique;
     font-size: large;
 }
+
 #app {
   width: 100%;
   height: 100vh;
@@ -204,13 +205,15 @@ h6 {
   justify-content: center;
   align-items: center;
 }
+
+
 #music{
   display: inline-block;
   padding: .3em;
   font-family: 'Megrim';
   position: absolute;
   top: 50%;
-  left: 60%;
+  left: 65%;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -220,14 +223,6 @@ h6 {
   color: rgba(255,255,255,.68);
   border: .075em solid rgba(255,255,255,.1);
 }
-#content-2{
-  background-color: grey;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-
 
 .content-section {
   height: 100vh;

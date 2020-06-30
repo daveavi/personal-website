@@ -131,13 +131,19 @@ var frame = function () {
   window.requestAnimFrame(frame);
 };
 
-// Click listener
+
 var showParticles = function () {
   var x = Math.random(),
   y = Math.random();
   cleanUpArray();
   initParticles(config.particleNumber, x, y);
 };
+
+// Click listener
+var expandCanvas = function (){
+  //  document.querySelector("content").css("width", "100");
+};
+
 frame();
 var particleInterval = setInterval("showParticles()", 2000);
 
