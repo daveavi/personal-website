@@ -4,72 +4,47 @@
   background-color: grey;
 }
 
-.wrapper{
-    display:flex;
-    justify-content: flex-start;
-    margin-top:20px;
+.wrapper {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 20px;
 }
 
-.wrapper ul{
-    list-style: none;
+.wrapper ul {
+  list-style: none;
 }
 
-.wrapper ul li{
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    margin: 0 10px;
-    text-align: center;
-    cursor: pointer;
-    border-radius: 50%;
-    /* border: 5px solid ;  */
-    float: left;
-    transition: all 0.5s ease;
+#container-social-icons {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 20px;
 }
 
-.wrapper ul li:hover.github{
-    border: 2px solid black;
-    box-shadow: 0 0 15px  ;
-    transition: all 0.5s ease;
+#container-social-icons ul {
+  list-style: none;
 }
 
-.wrapper ul li:hover .fa-github{
-    color: black;
-    text-shadow: 0 0 15px black;
-    margin-top: 10px;
-    transition: all 0.5s ease;
+.social-icon {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  margin: 0 10px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 50%;
+  /* border: 5px solid ;  */
+  float: left;
+  transition: all 0.2s ease-out;
 }
 
-.wrapper ul li:hover.linkedin{
-    border: 2px solid  #2867B2;
-    box-shadow: 0 0 15px  #2867B2;
-    transition: all 0.5s ease;
-}
-
-.wrapper ul li:hover .fa-linkedin{
-    color:#2867B2;
-    text-shadow: 0 0 15px #2867B2;
-    margin-top: 10px;
-    transition: all 0.5s ease;
-}
-
-.wrapper ul li:hover.soundcloud{
-    border: 2px solid #ff7700;
-    box-shadow: 0 0 15px #ff7700;
-    transition: all 0.5s ease;
-}
-
-.wrapper ul li:hover .fa-soundcloud{
-    color:#ff7700;
-    text-shadow: 0 0 15px #ff7700;
-    margin-top: 10px;
-    transition: all 0.5s ease;
+.social-icon:hover {
+  opacity: 0.65;
 }
 
 .button {
   width: 140px;
   height: 45px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 1.5px;
@@ -79,13 +54,13 @@
   border: none;
   border-radius: 45px;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease 0s;
+  transition: all 0.3s ease-out;
   cursor: pointer;
   outline: none;
   /* margin-left: 50px;
   margin-top: 90px;  */
   /* position:relative; */
-  }
+}
 
 .button:hover {
   background-color: rgb(46, 144, 229);
@@ -94,8 +69,8 @@
   transform: translateY(-7px);
 }
 
-#resume{
-    margin-top:20px;
+#resume {
+  margin-top: 20px;
 }
 
 body {
@@ -121,40 +96,40 @@ h6 {
 }
 
 @keyframes fadeInLeft {
-    from {
-        opacity:0;
-        -webkit-transform: translatex(-100px);
-        -moz-transform: translatex(-100px);
-        -o-transform: translatex(-100px);
-        transform: translatex(-100px);
-    }
-    to {
-        opacity:1;
-        -webkit-transform: translatex(0);
-        -moz-transform: translatex(0);
-        -o-transform: translatex(0);
-        transform: translatex(0);
-    }
+  from {
+    opacity: 0;
+    -webkit-transform: translatex(-100px);
+    -moz-transform: translatex(-100px);
+    -o-transform: translatex(-100px);
+    transform: translatex(-100px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translatex(0);
+    -moz-transform: translatex(0);
+    -o-transform: translatex(0);
+    transform: translatex(0);
+  }
 }
 .in-left {
-    -webkit-animation-name: fadeInLeft;
-    -moz-animation-name: fadeInLeft;
-    -o-animation-name: fadeInLeft;
-    animation-name: fadeInLeft;
-    -webkit-animation-fill-mode: both;
-    -moz-animation-fill-mode: both;
-    -o-animation-fill-mode: both;
-    animation-fill-mode: both;
-    -webkit-animation-duration: 0.5s;
-    -moz-animation-duration: 0.5s;
-    -o-animation-duration: 0.5s;
-    animation-duration: 0.5s;
-    -webkit-animation-delay: 0.5s;
-    -moz-animation-delay: 0.5s;
-    -o-animation-duration:0.5s;
-    animation-delay: 0.5s;
+  -webkit-animation-name: fadeInLeft;
+  -moz-animation-name: fadeInLeft;
+  -o-animation-name: fadeInLeft;
+  animation-name: fadeInLeft;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 0.5s;
+  -moz-animation-duration: 0.5s;
+  -o-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-delay: 0.5s;
+  -moz-animation-delay: 0.5s;
+  -o-animation-duration: 0.5s;
+  animation-delay: 0.5s;
 }
-.in-left2{
+.in-left2 {
   -webkit-animation-name: fadeInLeft;
   -moz-animation-name: fadeInLeft;
   -o-animation-name: fadeInLeft;
@@ -169,13 +144,13 @@ h6 {
   animation-duration: 1s;
   -webkit-animation-delay: 1s;
   -moz-animation-delay: 1s;
-  -o-animation-duration:1s;
+  -o-animation-duration: 1s;
   animation-delay: 1s;
 }
 
-#profile-description{
-    font-style: oblique;
-    font-size: large;
+#profile-description {
+  font-style: oblique;
+  font-size: large;
 }
 
 #app {
@@ -189,6 +164,7 @@ h6 {
   width: 35%;
   display: flex;
   flex-direction: column;
+  transition: all 2s ease;
   justify-content: center;
 }
 
@@ -198,10 +174,9 @@ h6 {
   overflow: scroll;
   transition: all 2s ease;
   background-color: blue;
-  
 }
 
-#content-1{
+.content-canvas {
   background-color: #151515;
   color: white;
   display: flex;
@@ -209,24 +184,23 @@ h6 {
   align-items: center;
 }
 
-
-#music{
+#btn-journeys {
   display: inline-block;
-  padding: .3em;
-  font-family: 'Megrim';
+  padding: 0.3em;
+  font-family: "Megrim";
   position: absolute;
   top: 50%;
   left: 65%;
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  -webkit-transform: translate(-50%,-50%);
-          transform: translate(-50%,-50%);
-  color: rgba(255,255,255,.68);
-  border: .075em solid rgba(255,255,255,.1);
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color: rgba(255, 255, 255, 0.68);
+  border: 0.075em solid rgba(255, 255, 255, 0.1);
 }
 
-.content-section {
-  height: 100%;
+.canvas {
+  height: 100vh;
 }
