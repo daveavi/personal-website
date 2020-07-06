@@ -186,6 +186,8 @@ journeysButton.addEventListener("click", expandCanvas);
 
 window.onresize = function() {
   console.log("Resizing window");
-  canvas.width = contentContainer.clientWidth;
-  canvas.height = contentContainer.clientHeight;
+  setTimeout(function() {
+    canvas.width = contentContainer.clientWidth;
+    canvas.height = contentContainer.clientHeight;
+  }, 2000);
 };
