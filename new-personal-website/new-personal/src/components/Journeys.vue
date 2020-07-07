@@ -16,8 +16,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans&display=swap");
-@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+@import url('https://fonts.googleapis.com/css?family=Megrim');
 
 #content {
   height: 100vh;
@@ -33,6 +32,8 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  height:100vh; 
+  /* for now height is 100vh, but will write javascript to get it working */
 }
 
 #btn-journeys {
@@ -50,5 +51,8 @@ export default {
   transform: translate(-50%, -50%);
   color: rgba(255, 255, 255, 0.68);
   border: 0.075em solid rgba(255, 255, 255, 0.1);
+}
+.canvas {
+  height: 100vh;
 }
 </style>
