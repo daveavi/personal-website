@@ -5,15 +5,14 @@
         <div id="container-social-icons" class="in-left2">
             <ul>
                 <li class="social-icon">
-                  <fa-icon :icon="['fab', 'github']"/>
+                  <fa-icon :icon="['fab', 'github']" id="icon-size"/>
                 </li>
                  <li class="social-icon">
-                  <fa-icon :icon="['fab', 'linkedin']"/>
+                  <fa-icon :icon="['fab', 'linkedin']" id="icon-size"/>
                 </li>
                  <li class="social-icon">
-                  <fa-icon :icon="['fab', 'soundcloud']"/>
+                  <fa-icon :icon="['fab', 'soundcloud']" id="icon-size"/>
                 </li>
-               
             </ul>
         </div>
 
@@ -33,7 +32,6 @@ export default {
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans&display=swap"); 
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed'); 
-@import url('https://use.fontawesome.com/releases/v5.13.0/css/all.css');
 #profile {
   height: 100vh;
   width: 35%;
@@ -44,7 +42,7 @@ export default {
 }
 
 #profile-name {
-  font-weight: 800;
+  font-weight: 500;
 }
 
 #profile-description {
@@ -55,6 +53,8 @@ export default {
 #container-social-icons {
   display: flex;
   justify-content: flex-start;
+  justify-content:space-between(around);
+  margin-left: -50px;
   margin-top: 20px;
 }
 
@@ -77,6 +77,9 @@ export default {
 
 .social-icon:hover {
   opacity: 0.65;
+}
+#icon-size{
+  font-size:24px;
 }
 
 .button {
@@ -105,6 +108,62 @@ export default {
   box-shadow: 0px 15px 20px rgba(46, 144, 229, 0.4);
   color: #fff;
   transform: translateY(-7px);
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translatex(-100px);
+    -moz-transform: translatex(-100px);
+    -o-transform: translatex(-100px);
+    transform: translatex(-100px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translatex(0);
+    -moz-transform: translatex(0);
+    -o-transform: translatex(0);
+    transform: translatex(0);
+  }
+}
+.in-left {
+  -webkit-animation-name: fadeInLeft;
+  -moz-animation-name: fadeInLeft;
+  -o-animation-name: fadeInLeft;
+  animation-name: fadeInLeft;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 0.5s;
+  -moz-animation-duration: 0.5s;
+  -o-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-delay: 0.5s;
+  -moz-animation-delay: 0.5s;
+  -o-animation-duration: 0.5s;
+  animation-delay: 0.5s;
+}
+.in-left2 {
+  -webkit-animation-name: fadeInLeft;
+  -moz-animation-name: fadeInLeft;
+  -o-animation-name: fadeInLeft;
+  animation-name: fadeInLeft;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  -o-animation-duration: 1s;
+  animation-delay: 1s;
+}
+#icon{
+  font-size:24px;
 }
 
 

@@ -17,7 +17,7 @@ Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 
 Vue.config.productionTip = false
-
+require('vue2-animate/dist/vue2-animate.min.css')
 new Vue({
   render: h => h(App),
 }).$mount('#app')
