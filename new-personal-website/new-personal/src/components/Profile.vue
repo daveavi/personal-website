@@ -19,7 +19,7 @@
             </ul>
         </div>
 
-        <button class="button in-left2" onclick="window.open('Avi-Dave-Resume.pdf');" target="_blank">Resume</button>
+        <a class="button in-left2" href="../Avi-Dave-Resume.pdf" target="_blank">Resume</a>
 </div>
 </template>
 
