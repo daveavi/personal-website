@@ -1,16 +1,20 @@
 // Little Canvas things
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
-const profileHtml = document.getElementById("profile").innerHTML;
+// const profileHtml = document.getElementById("profile").innerHTML;
 
 const contentContainer = document.getElementById("content");
-const profileContainer = document.getElementById("profile");
+// const profileContainer = document.getElementById("profile");
 
 // canvas.width = parent.offsetWidth;
 // canvas.height = parent.offsetHeight;
 // // // Set Canvas to be window size
 canvas.width = contentContainer.clientWidth;
 canvas.height = contentContainer.clientHeight;
+
+
+// const journeysButton = document.getElementById("btn-journeys");
+// journeysButton.addEventListener("click", expandCanvas);
 
 // Configuration, Play with these
 var config = {
@@ -33,9 +37,6 @@ var colorPalette = {
 
 // Some Variables hanging out
 var particles = [],
-  centerX = canvas.width / 2,
-  centerY = canvas.height / 2,
-  drawBg,
   // Draws the background for the canvas, because space
   drawBg = function(ctx, color) {
     ctx.fillStyle = "rgb(" + color.r + "," + color.g + "," + color.b + ")";
@@ -65,7 +66,7 @@ var Particle = function(x, y) {
 // Accepts an rgba object
 // returns a modified rgba object or a rgba string if true is passed in for argument 2
 var colorVariation = function(color, returnString) {
-  var r, g, b, a, variation;
+  var r, g, b, a;
   r = Math.round(
     Math.random() * config.colorVariation - config.colorVariation / 2 + color.r
   );
@@ -150,8 +151,7 @@ var frame = function() {
 };
 
 var showParticles = function() {
-  var x = Math.random(),
-    y = Math.random();
+  var x = Math.random(), y = Math.random();
   cleanUpArray();
   initParticles(config.particleNumber, x, y);
 };
@@ -170,24 +170,24 @@ var expandCanvas = function() {
   }, 2000);
 };
 
-frame();
-var particleInterval = setInterval("showParticles()", 2000);
+// var myStopFunction = function() {
+//   clearInterval(particleInterval);
+// };
 
-var myStopFunction = function() {
-  clearInterval(particleInterval);
-};
+// window.onresize = function() {
+//   console.log("Resizing window");
+//   setTimeout(function() {
+//     canvas.width = contentContainer.clientWidth;
+//     canvas.height = contentContainer.clientHeight;
+//   }, 2000);
+// };
 
-//frame();
-setTimeout("myStopFunction()", 20000);
-cleanUpArray();
 
-const journeysButton = document.getElementById("btn-journeys");
-journeysButton.addEventListener("click", expandCanvas);
+// frame();
+// var particleInterval = setInterval("showParticles()", 2000);
+// //frame();
+// setTimeout("myStopFunction()", 20000);
+// cleanUpArray();
 
-window.onresize = function() {
-  console.log("Resizing window");
-  setTimeout(function() {
-    canvas.width = contentContainer.clientWidth;
-    canvas.height = contentContainer.clientHeight;
-  }, 2000);
-};
+
+
