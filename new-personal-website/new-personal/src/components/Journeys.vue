@@ -33,7 +33,8 @@ export default {
           { r: 255, g: 255, b: 255 }, // solorFlare
           { r: 255, g: 255, b: 255 } // totesASun
         ]
-      }
+      },
+      requestAnimationFrame : window.requestAnimationFrame || window.mozRequestAnimationFrame|| window.webkitRequestAnimationFrame || window.msRequestAnimationFrame, 
     };
   },
   mounted() {
@@ -42,7 +43,7 @@ export default {
     this.ctx = this.journeysCanvas.getContext("2d");
     // window.requestAnimationFrame(this.frame());
     this.frame();
-    // this.showParticles();
+    this.showParticles();
   },
   methods: {
 
@@ -86,7 +87,7 @@ export default {
         this.drawParticle(p.x, p.y, p.r, p.c);
       });
     },
-
+    
 
     /**
      * Remove particles that aren't on the canvas
@@ -98,15 +99,14 @@ export default {
       this.particles.map(p => {
         return this.updateParticleModel(p);
       });
+      console.log(this.particles);
       // Draw em'
       this.particles.forEach(p => {
         this.drawParticle(p.x, p.y, p.r, p.c);
       });
       // // Play the same song? Ok!
       // window.requestAnimationFrame(frame);
-      requestAnimationFrame(() => {
-        this.frame();
-      });
+      requestAnimationFrame(this.frame);
     },
 
     showParticles(){

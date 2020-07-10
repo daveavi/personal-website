@@ -183,9 +183,9 @@ var expandCanvas = function() {
 // };
 
 
-// frame();
-// var particleInterval = setInterval("showParticles()", 2000);
-// //frame();
+frame();
+var particleInterval = setInterval("showParticles()", 2000);
+//frame();
 // setTimeout("myStopFunction()", 20000);
 // cleanUpArray();
 
