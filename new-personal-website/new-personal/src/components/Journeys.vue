@@ -42,7 +42,7 @@ export default {
     // console.log(this.ctx);
     this.journeysCanvas = this.$refs.journeysCanvas;
     this.ctx = this.journeysCanvas.getContext("2d");
-    console.log(this.ctx);
+    // console.log(this.ctx);
     // window.requestAnimationFrame(this.frame());
     this.frame();
     this.showParticles();
@@ -85,7 +85,7 @@ export default {
       for (let i = 0; i < numParticles; i++) {
         // console.log(x)
         // console.log(y)
-        this.particles.push(new Particle(x, y, this.canvas, this.config));
+        this.particles.push(new Particle(x, y, this.canvas, this.config, this.colorPalette));
       }
       this.particles.forEach(p => {
         this.drawParticle(p.x, p.y, p.r, p.c);

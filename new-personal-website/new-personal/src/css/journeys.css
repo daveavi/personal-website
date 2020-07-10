@@ -14,7 +14,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height:100vh; 
+  /* height:100vh;  */
   /* for now height is 100vh, but will write javascript to get it working */
 }
 
