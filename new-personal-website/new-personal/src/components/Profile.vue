@@ -19,7 +19,7 @@
             </ul>
         </div>
 
-        <a class="button in-left2" href="../Avi-Dave-Resume.pdf" target="_blank">Resume</a>
+        <button class="button in-left2" href="../Avi-Dave-Resume.pdf" target="_blank">Resume</button>
 </div>
 </template>
 

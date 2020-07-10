@@ -19,7 +19,7 @@ export default {
       ctx: null,
       journeysCanvas: null,
       config:{
-        particleNumber: 800,
+        particleNumber: 10,
         maxParticleSize: 2,
         maxSpeed: 40,
         colorVariation: 50,
@@ -38,9 +38,11 @@ export default {
     };
   },
   mounted() {
-    console.log("here");
+    console.log("Mounting");
+    // console.log(this.ctx);
     this.journeysCanvas = this.$refs.journeysCanvas;
     this.ctx = this.journeysCanvas.getContext("2d");
+    console.log(this.ctx);
     // window.requestAnimationFrame(this.frame());
     this.frame();
     this.showParticles();
@@ -81,7 +83,9 @@ export default {
 
     initParticles(numParticles, x, y) {
       for (let i = 0; i < numParticles; i++) {
-        this.particles.push(new Particle(x, y, this.canvas, this.config, this.colorPalette));
+        // console.log(x)
+        // console.log(y)
+        this.particles.push(new Particle(x, y, this.canvas, this.config));
       }
       this.particles.forEach(p => {
         this.drawParticle(p.x, p.y, p.r, p.c);
@@ -99,7 +103,8 @@ export default {
       this.particles.map(p => {
         return this.updateParticleModel(p);
       });
-      console.log(this.particles);
+
+      // console.log(this.particles.length);
       // Draw em'
       this.particles.forEach(p => {
         this.drawParticle(p.x, p.y, p.r, p.c);
@@ -112,10 +117,14 @@ export default {
     showParticles(){
       var x = Math.random(), y = Math.random();
       this.cleanUpArray();
-      this.initParticles(this.particleNumber, x, y);
+      this.initParticles(this.config.particleNumber, x, y);
     },
 
     drawParticle(x, y, r, c) {
+      // console.log(x)
+      // console.log(y)
+      // console.log(r)
+      console.log(c)
       this.ctx.beginPath();
       this.ctx.fillStyle = c;
       this.ctx.arc(x, y, r, 0, 2 * Math.PI, false);
