@@ -1,5 +1,5 @@
 <template>
-  <div id="content">
+  <div id="content" ref="content-ref">
     <div>
       <canvas ref="journeysCanvas" class="content-canvas" id="content-1"></canvas>
     </div>
@@ -18,6 +18,7 @@ export default {
     return {
       ctx: null,
       journeysCanvas: null,
+      contentContainer: null,
       config:{
         particleNumber: 10,
         maxParticleSize: 2,
@@ -42,10 +43,13 @@ export default {
     // console.log(this.ctx);
     this.journeysCanvas = this.$refs.journeysCanvas;
     this.ctx = this.journeysCanvas.getContext("2d");
+    this.contentContainer = this.$refs["content-ref"];
+    this.journeysCanvas.width = this.contentContainer.clientWidth;
+    this.journeysCanvas.height = this.contentContainer.clientHeight;
     // console.log(this.ctx);
     // window.requestAnimationFrame(this.frame());
     this.frame();
-    this.showParticles();
+    setInterval(() => this.showParticles(), 1000)
   },
   methods: {
 
