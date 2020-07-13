@@ -1,8 +1,6 @@
 <template>
   <div id="content" ref="content-ref">
-    <div>
       <canvas ref="journeysCanvas" class="content-canvas" id="content-1"></canvas>
-    </div>
     <h1 id="btn-journeys" class="animate__animated animate__fadeIn animate__delay-2s">Journeys</h1>
   </div>
 </template>
@@ -16,11 +14,8 @@ export default {
   
   data() {
     return {
-      ctx: null,
-      journeysCanvas: null,
-      contentContainer: null,
       config:{
-        particleNumber: 10,
+        particleNumber: 800,
         maxParticleSize: 2,
         maxSpeed: 40,
         colorVariation: 50,
@@ -38,18 +33,25 @@ export default {
       requestAnimationFrame : window.requestAnimationFrame || window.mozRequestAnimationFrame|| window.webkitRequestAnimationFrame || window.msRequestAnimationFrame, 
     };
   },
+  computed: {
+            journeysCanvas: function () {
+                return this.$refs.journeysCanvas;
+            },
+            ctx: function () {
+                return this.journeysCanvas.getContext('2d');
+            },
+            contentContainer: function () {
+                return this.$refs["content-ref"];
+            }
+  },
+
   mounted() {
-    console.log("Mounting");
-    // console.log(this.ctx);
-    this.journeysCanvas = this.$refs.journeysCanvas;
-    this.ctx = this.journeysCanvas.getContext("2d");
-    this.contentContainer = this.$refs["content-ref"];
-    this.journeysCanvas.width = this.contentContainer.clientWidth;
-    this.journeysCanvas.height = this.contentContainer.clientHeight;
-    // console.log(this.ctx);
-    // window.requestAnimationFrame(this.frame());
+    window.addEventListener('resize', this.handleResize);
+    this.handleResize();
     this.frame();
-    setInterval(() => this.showParticles(), 1000)
+    this.particleInterval();
+
+    
   },
   methods: {
 
@@ -87,8 +89,6 @@ export default {
 
     initParticles(numParticles, x, y) {
       for (let i = 0; i < numParticles; i++) {
-        // console.log(x)
-        // console.log(y)
         this.particles.push(new Particle(x, y, this.canvas, this.config, this.colorPalette));
       }
       this.particles.forEach(p => {
@@ -125,16 +125,26 @@ export default {
     },
 
     drawParticle(x, y, r, c) {
-      // console.log(x)
-      // console.log(y)
-      // console.log(r)
-      console.log(c)
       this.ctx.beginPath();
       this.ctx.fillStyle = c;
       this.ctx.arc(x, y, r, 0, 2 * Math.PI, false);
       this.ctx.fill();
       this.ctx.closePath();
-    }
+    },
+
+    particleInterval(){
+      setInterval(() => this.showParticles(), 3000)
+    },
+    stopInterval(){
+      clearInterval(this.particleInterval);
+    },
+
+    handleResize: function () {
+      // Calculate new canvas size based on window
+      this.journeysCanvas.width = this.contentContainer.clientWidth;
+      this.journeysCanvas.height = this.contentContainer.clientHeight;
+              
+    },
 
 
   }
