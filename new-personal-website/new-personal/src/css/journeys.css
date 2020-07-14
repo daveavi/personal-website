@@ -3,7 +3,7 @@
 #content {
   height: 100vh;
   width: 65%;
-  overflow: scroll;
+  /* overflow: scroll; */
   transition: all 2s ease;
   background-color: blue;
 }
@@ -14,8 +14,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* height:100vh;  */
-  /* for now height is 100vh, but will write javascript to get it working */
+ 
 }
 
 #btn-journeys {
@@ -33,6 +32,7 @@
   transform: translate(-50%, -50%);
   color: rgba(255, 255, 255, 0.68);
   border: 0.075em solid rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease-out;
 }
 #btn-journeys:hover {
   background-color:whitesmoke;

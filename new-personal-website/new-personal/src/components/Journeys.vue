@@ -1,21 +1,20 @@
 <template>
   <div id="content" ref="content-ref">
       <canvas ref="journeysCanvas" class="content-canvas" id="content-1"></canvas>
-    <h1 id="btn-journeys" class="animate__animated animate__fadeIn animate__delay-2s">Journeys</h1>
+      <h1 id="btn-journeys" class="animate__animated animate__fadeIn animate__delay-2s">Journeys</h1>
   </div>
 </template>
 
 <script>
 import Particle from '../particles.js';
 export default {
-
   name: "Journeys",
   
   
   data() {
     return {
       config:{
-        particleNumber: 800,
+        particleNumber: 400,
         maxParticleSize: 2,
         maxSpeed: 40,
         colorVariation: 50,
@@ -33,6 +32,7 @@ export default {
       requestAnimationFrame : window.requestAnimationFrame || window.mozRequestAnimationFrame|| window.webkitRequestAnimationFrame || window.msRequestAnimationFrame, 
     };
   },
+
   computed: {
             journeysCanvas: function () {
                 return this.$refs.journeysCanvas;
@@ -45,13 +45,15 @@ export default {
             }
   },
 
-  mounted() {
+  created(){
     window.addEventListener('resize', this.handleResize);
+  },
+
+  mounted() {
     this.handleResize();
     this.frame();
+    // this.initParticles();
     this.particleInterval();
-
-    
   },
   methods: {
 
@@ -133,7 +135,7 @@ export default {
     },
 
     particleInterval(){
-      setInterval(() => this.showParticles(), 3000)
+      setInterval(() => this.showParticles(), 5000)
     },
     stopInterval(){
       clearInterval(this.particleInterval);
@@ -143,7 +145,14 @@ export default {
       // Calculate new canvas size based on window
       this.journeysCanvas.width = this.contentContainer.clientWidth;
       this.journeysCanvas.height = this.contentContainer.clientHeight;
-              
+      // this.drawBg(this.ctx, this.colorPalette.bg);
+      this.$nextTick(() => {
+          this.frame();
+      })
+      console.log("Cavnas width: " + this.journeysCanvas.width);
+      console.log("Div width: " + this.contentContainer.clientWidth);
+      console.log("Cavnas height: " + this.journeysCanvas.height);
+      console.log("Div height: " + this.contentContainer.clientHeight);
     },
 
 
