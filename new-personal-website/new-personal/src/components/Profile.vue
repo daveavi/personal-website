@@ -7,27 +7,40 @@
                 <li class="social-icon" id="github">
                   <fa-icon :icon="['fab', 'github']" id="icon-size"/>
                 </li>
+
                  <li class="social-icon" id="linkedin">
                   <fa-icon :icon="['fab', 'linkedin']" id="icon-size"/>
                 </li>
+
                  <li class="social-icon" id="soundcloud">
                   <fa-icon :icon="['fab', 'soundcloud']" id="icon-size"/>
                 </li>
+
                 <li class="social-icon" id="youtube">
                   <fa-icon :icon="['fab', 'youtube']" id="icon-size"/>
                 </li>
             </ul>
         </div>
 
-        <button class="button in-left2" href="../Avi-Dave-Resume.pdf" target="_blank">Resume</button>
+        <button class="button in-left2" v-on:click="openPdf()" target="_blank">Resume</button>
 </div>
 </template>
 
 <script>
 
 export default {
-  name: 'Profile'
-  
+  name: 'Profile',
+  data() {
+    return{
+      brands: ['github', 'linkedin','soundcloud', 'youtube']
+    }
+  },
+  methods:{
+    openPdf(){
+      window.open('./Avi-Dave-Resume.pdf', '_blank');
+    }
+  }
+
 }
 </script>
 
@@ -57,8 +70,7 @@ export default {
 }
 
 .button:hover {
-  background-color: rgb(46, 144, 229);
-  box-shadow: 0px 15px 20px rgba(46, 144, 229, 0.4);
+  background-color: #211F1F;
   color: #fff;
   transform: translateY(-7px);
 }

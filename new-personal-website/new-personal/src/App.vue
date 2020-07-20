@@ -1,19 +1,24 @@
 <template>
   <div id="app">
     <Profile/>
-    <Journeys/>
+    <JourneysPreview/>
+    <router-view></router-view> 
   </div>
 </template>
 
 <script>
 import Profile from './components/Profile.vue';
-import Journeys from './components/Journeys.vue';
+import JourneysPreview from './components/Journeys-Preview.vue';
 
 export default {
   name: 'App',
   components: {
     Profile,
-    Journeys
+    JourneysPreview
+  },
+  methods: {
+
+    
   }
 }
 </script>

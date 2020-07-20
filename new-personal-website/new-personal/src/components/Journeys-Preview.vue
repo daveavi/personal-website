@@ -1,14 +1,16 @@
 <template>
   <div id="content" ref="content-ref">
       <canvas ref="journeysCanvas" class="content-canvas" id="content-1"></canvas>
-      <h1 id="btn-journeys" class="animate__animated animate__fadeIn animate__delay-2s">Journeys</h1>
+      <h1 id="btn-journeys" class="animate__animated animate__fadeIn animate__delay-2s" v-on:click="expandCanvas()">Journeys</h1>
   </div>
 </template>
 
 <script>
 import Particle from '../particles.js';
+
+
 export default {
-  name: "Journeys",
+  name: "JourneysPreview",
   
   
   data() {
@@ -52,9 +54,13 @@ export default {
   mounted() {
     this.handleResize();
     this.frame();
-    // this.initParticles();
-    this.particleInterval();
+    // this.initParticles(this.particleNumber, 0.982123, 0.982123);
+    var x = Math.random(), y = Math.random();
+    this.cleanUpArray();
+    this.initParticles(this.config.particleNumber, x, y);
+    // this.particleInterval();
   },
+  
   methods: {
 
 
@@ -90,6 +96,8 @@ export default {
     },
 
     initParticles(numParticles, x, y) {
+      console.log(x);
+      console.log(y);
       for (let i = 0; i < numParticles; i++) {
         this.particles.push(new Particle(x, y, this.canvas, this.config, this.colorPalette));
       }
@@ -149,11 +157,22 @@ export default {
       this.$nextTick(() => {
           this.frame();
       })
-      console.log("Cavnas width: " + this.journeysCanvas.width);
-      console.log("Div width: " + this.contentContainer.clientWidth);
-      console.log("Cavnas height: " + this.journeysCanvas.height);
-      console.log("Div height: " + this.contentContainer.clientHeight);
     },
+
+    expandCanvas() {
+      // document.querySelector("content").css("width", "100");
+
+      // this.contentContainer.style.width = "100%";
+      // this.handleResize();
+      // // profileContainer.classList.remove("p-4");
+      // // profileContainer.innerHTML = "";
+      // // profileContainer.style.width = "0px";
+      // // setTimeout(function() {
+      // //   canvas.width = contentContainer.clientWidth;
+      // //   canvas.height = contentContainer.clientHeight;
+      // // }, 2000);
+      this.$emit('expandCanvas')
+    }
 
 
   }

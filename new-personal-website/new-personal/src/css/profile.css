@@ -41,15 +41,39 @@
   /* border: 5px solid ;  */
   float: left;
   transition: all 0.2s ease-out;
-}
-
-.social-icon:hover {
   opacity: 0.65;
 }
 
+
 #icon-size{
   font-size:24px;
+  
 }
+
+#github:hover{
+  color:#211F1F;
+  opacity: 1.00;
+}
+
+#linkedin:hover{
+  color:#0e76a8;
+  opacity: 1.00;
+}
+
+#soundcloud:hover{
+  color: #ff7700;
+  opacity: 1.00;
+}
+
+#youtube:hover{
+  color: #FF0000;
+  opacity: 1.00;
+}
+
+
+/* #icon-size:hover{
+  color:blue;
+} */
 
 .button {
   width: 140px;
