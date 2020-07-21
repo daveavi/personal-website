@@ -19,6 +19,10 @@
                 <li class="social-icon" id="youtube">
                   <fa-icon :icon="['fab', 'youtube']" id="icon-size"/>
                 </li>
+                <!-- <li v-for="brand in brands"  v-bind:key="brand" class="social-icon" :id="brand">
+                  {brand}
+                  <fa-icon :icon="['fab', {brand.item}]" id="icon-size"/>
+                </li> -->
             </ul>
         </div>
 
@@ -32,7 +36,11 @@ export default {
   name: 'Profile',
   data() {
     return{
-      brands: ['github', 'linkedin','soundcloud', 'youtube']
+      brands: [
+        {item:'github'}, 
+        {item:'linkedin'},
+        {item:'soundcloud'}, 
+        {item:'youtube'}]
     }
   },
   methods:{
