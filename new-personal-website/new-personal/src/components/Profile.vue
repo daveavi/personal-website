@@ -1,60 +1,55 @@
 <template>
-<div id="profile" class="p-4">
-        <h1 id="profile-name" class="display-4 in-left">Avi Dave</h1>
-        <h2 id="profile-description" class="in-left2">soul-seeker, beat-maker, problem-solver</h2>
-        <div id="container-social-icons" class="in-left2">
-            <ul>
-                <li class="social-icon" id="github">
-                  <fa-icon :icon="['fab', 'github']" id="icon-size"/>
-                </li>
+  <div class="p-4">
+    <h1 id="profile-name" class="display-4 in-left">Avi Dave</h1>
+    <h2 id="profile-description" class="in-left2">soul-seeker, beat-maker, problem-solver</h2>
+    <div id="container-social-icons" class="in-left2">
+      <ul>
+        <li class="social-icon" id="github">
+          <fa-icon :icon="['fab', 'github']" id="icon-size"/>
+        </li>
 
-                 <li class="social-icon" id="linkedin">
-                  <fa-icon :icon="['fab', 'linkedin']" id="icon-size"/>
-                </li>
+        <li class="social-icon" id="linkedin">
+          <fa-icon :icon="['fab', 'linkedin']" id="icon-size"/>
+        </li>
 
-                 <li class="social-icon" id="soundcloud">
-                  <fa-icon :icon="['fab', 'soundcloud']" id="icon-size"/>
-                </li>
+        <li class="social-icon" id="soundcloud">
+          <fa-icon :icon="['fab', 'soundcloud']" id="icon-size"/>
+        </li>
 
-                <li class="social-icon" id="youtube">
-                  <fa-icon :icon="['fab', 'youtube']" id="icon-size"/>
-                </li>
-                <!-- <li v-for="brand in brands"  v-bind:key="brand" class="social-icon" :id="brand">
-                  {brand}
-                  <fa-icon :icon="['fab', {brand.item}]" id="icon-size"/>
-                </li> -->
-            </ul>
-        </div>
+        <li class="social-icon" id="youtube">
+          <fa-icon :icon="['fab', 'youtube']" id="icon-size"/>
+        </li>
+        <!-- <li v-for="brand in brands"  v-bind:key="brand" class="social-icon" :id="brand">
+              {brand}
+              <fa-icon :icon="['fab', {brand}]" id="icon-size"/>
+        </li> -->
 
-        <button class="button in-left2" v-on:click="openPdf()" target="_blank">Resume</button>
-</div>
+      </ul>
+    </div>
+
+    <button class="button in-left2" v-on:click="openPdf()" target="_blank">Resume</button>
+  </div>
 </template>
 
 <script>
-
 export default {
-  name: 'Profile',
+  name: "Profile",
   data() {
-    return{
-      brands: [
-        {item:'github'}, 
-        {item:'linkedin'},
-        {item:'soundcloud'}, 
-        {item:'youtube'}]
-    }
+    return {
+      brands: ["github", "linkedin", "soundcloud", "youtube"]
+    };
   },
-  methods:{
-    openPdf(){
-      window.open('./Avi-Dave-Resume.pdf', '_blank');
+  methods: {
+    openPdf() {
+      window.open("./Avi-Dave-Resume.pdf", "_blank");
     }
   }
-
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-@import '../css/profile.css';
+@import "../css/profile.css";
 .button {
   width: 140px;
   height: 45px;

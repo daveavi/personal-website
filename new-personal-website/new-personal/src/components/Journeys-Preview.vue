@@ -1,25 +1,33 @@
 <template>
-  <div id="content" ref="content-ref">
-      <canvas ref="journeysCanvas" class="content-canvas" id="content-1"></canvas>
-      <h1 id="btn-journeys" class="animate__animated animate__fadeIn animate__delay-2s" v-on:click="expandCanvas()">Journeys</h1>
+  <div  ref="content-ref">
+    <canvas ref="journeysCanvas" id="journeys-canvas" ></canvas>
+    <!-- <h1 id="btn-journeys" class="animate__animated animate__fadeIn animate__delay-2s" v-on:click="expandCanvas()">Journeys</h1> -->
+    
+    <h1
+      ref="btnJourneys"
+      id="btn-journeys"
+      :class="{'faded': journeysFaded}"
+      class= "animate__animated animate__fadeIn animate__delay-2s"
+      v-on:click="startJourneys()"
+    >Journeys</h1>
+
   </div>
 </template>
 
 <script>
-import Particle from '../particles.js';
-
+import Particle from "../Particle.js";
 
 export default {
   name: "JourneysPreview",
-  
-  
+
   data() {
     return {
-      config:{
+      journeysFaded: false,
+      config: {
         particleNumber: 400,
         maxParticleSize: 2,
         maxSpeed: 40,
-        colorVariation: 50,
+        colorVariation: 50
       },
       particles: [],
       colorPalette: {
@@ -31,28 +39,27 @@ export default {
           { r: 255, g: 255, b: 255 } // totesASun
         ]
       },
-      requestAnimationFrame : window.requestAnimationFrame || window.mozRequestAnimationFrame|| window.webkitRequestAnimationFrame || window.msRequestAnimationFrame, 
+      requestAnimationFrame:
+        window.requestAnimationFrame ||
+        window.mozRequestAnimationFrame ||
+        window.webkitRequestAnimationFrame ||
+        window.msRequestAnimationFrame
     };
   },
 
   computed: {
-            journeysCanvas: function () {
-                return this.$refs.journeysCanvas;
-            },
-            ctx: function () {
-                return this.journeysCanvas.getContext('2d');
-            },
-            contentContainer: function () {
-                return this.$refs["content-ref"];
-            }
+    journeysCanvas: function() {
+      return this.$refs.journeysCanvas;
+    },
+    ctx: function() {
+      return this.journeysCanvas.getContext("2d");
+    }
   },
 
-  created(){
-    window.addEventListener('resize', this.handleResize);
-  },
+  
 
   mounted() {
-    this.handleResize();
+    // this.handleResize();
     this.frame();
     // this.initParticles(this.particleNumber, 0.982123, 0.982123);
     var x = Math.random(), y = Math.random();
@@ -60,18 +67,20 @@ export default {
     this.initParticles(this.config.particleNumber, x, y);
     // this.particleInterval();
   },
-  
   methods: {
 
-
-    /**
+    startJourneys() {
+      this.$emit('start-journeys')
+      this.journeysFaded=true
+      setTimeout(() => this.$refs.btnJourneys.style.display = 'none', 200)
+    },
+        /**
      * Draws the background for the canvas, because space
-    */
+     */
     drawBg(ctx, color) {
       ctx.fillStyle = "rgb(" + color.r + "," + color.g + "," + color.b + ")";
       ctx.fillRect(0, 0, this.journeysCanvas.width, this.journeysCanvas.height);
     },
-
 
     /**
      *  Used to find the rocks next point in space, accounting for speed and direction
@@ -99,13 +108,14 @@ export default {
       console.log(x);
       console.log(y);
       for (let i = 0; i < numParticles; i++) {
-        this.particles.push(new Particle(x, y, this.canvas, this.config, this.colorPalette));
+        this.particles.push(
+          new Particle(x, y, this.canvas, this.config, this.colorPalette)
+        );
       }
       this.particles.forEach(p => {
         this.drawParticle(p.x, p.y, p.r, p.c);
       });
     },
-    
 
     /**
      * Remove particles that aren't on the canvas
@@ -128,8 +138,9 @@ export default {
       requestAnimationFrame(this.frame);
     },
 
-    showParticles(){
-      var x = Math.random(), y = Math.random();
+    showParticles() {
+      var x = Math.random(),
+        y = Math.random();
       this.cleanUpArray();
       this.initParticles(this.config.particleNumber, x, y);
     },
@@ -142,46 +153,59 @@ export default {
       this.ctx.closePath();
     },
 
-    particleInterval(){
-      setInterval(() => this.showParticles(), 5000)
+    particleInterval() {
+      setInterval(() => this.showParticles(), 5000);
     },
-    stopInterval(){
+    stopInterval() {
       clearInterval(this.particleInterval);
     },
-
-    handleResize: function () {
-      // Calculate new canvas size based on window
-      this.journeysCanvas.width = this.contentContainer.clientWidth;
-      this.journeysCanvas.height = this.contentContainer.clientHeight;
-      // this.drawBg(this.ctx, this.colorPalette.bg);
-      this.$nextTick(() => {
-          this.frame();
-      })
-    },
-
-    expandCanvas() {
-      // document.querySelector("content").css("width", "100");
-
-      // this.contentContainer.style.width = "100%";
-      // this.handleResize();
-      // // profileContainer.classList.remove("p-4");
-      // // profileContainer.innerHTML = "";
-      // // profileContainer.style.width = "0px";
-      // // setTimeout(function() {
-      // //   canvas.width = contentContainer.clientWidth;
-      // //   canvas.height = contentContainer.clientHeight;
-      // // }, 2000);
-      this.$emit('expandCanvas')
-    }
-
-
   }
 };
-
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 @import "../css/animate.css";
 @import "../css/journeys.css";
+
+/* #btn-journeys {
+  display: inline-block;
+  padding: 0.3em;
+  font-family: "Megrim";
+  position: absolute;
+  top: 50%;
+  left: 65%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color: rgba(255, 255, 255, 0.68);
+  border: 0.075em solid rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease-out;
+}
+
+/* #btn-journeys:hover {
+  background-color: whitesmoke;
+  opacity: 0.65;
+  box-shadow: 0px 15px 20px rgba(46, 144, 229, 0.4);
+  color: #151515;
+  /* transform: translateY(-7px); */
+
+.faded {
+  transition: opacity 0.3s ease-out;
+  opacity: 0;
+}
+
+
+#journeys-canvas {
+  background-color: #151515;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
 </style>

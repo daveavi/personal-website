@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Megrim');
+@import url("https://fonts.googleapis.com/css?family=Megrim");
 
 #content {
   height: 100vh;
@@ -6,15 +6,6 @@
   /* overflow: scroll; */
   transition: all 2s ease;
   background-color: blue;
-}
-
-.content-canvas {
-  background-color: #151515;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
- 
 }
 
 #btn-journeys {
@@ -34,8 +25,9 @@
   border: 0.075em solid rgba(255, 255, 255, 0.1);
   transition: all 0.2s ease-out;
 }
+
 #btn-journeys:hover {
-  background-color:whitesmoke;
+  background-color: whitesmoke;
   opacity: 0.65;
   /* box-shadow: 0px 15px 20px rgba(46, 144, 229, 0.4); */
   color: #151515;
