@@ -13,6 +13,7 @@
       </transition>
       
     </div>
+    
     <div id="journeys-container" :style="{width: intro === true ? '65%': '100%'}" ref="journeysContainer">
       <JourneysPreview @start-journeys="startJourneys"/>
     </div>
@@ -34,8 +35,17 @@ export default {
   },
   data() {
     return {
-      intro: true
+      intro: true,
+      // journeysContainer:{
+      //   width: this.$refs.journeysContainer.clientWidth,
+      //   height: this.$refs.journeysContainer.clientHeight
+      // }
     };
+  },
+  computed: {
+    journeysContainer: function(){
+      return this.$refs.journeysContainer
+    }
   },
   methods: {
     startJourneys: function() {

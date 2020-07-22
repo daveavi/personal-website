@@ -1,5 +1,5 @@
 <template>
-  <div  ref="content-ref">
+  <div id="template-container" ref="content-ref">
     <canvas ref="journeysCanvas" id="journeys-canvas" ></canvas>
     <!-- <h1 id="btn-journeys" class="animate__animated animate__fadeIn animate__delay-2s" v-on:click="expandCanvas()">Journeys</h1> -->
     
@@ -19,7 +19,6 @@ import Particle from "../Particle.js";
 
 export default {
   name: "JourneysPreview",
-
   data() {
     return {
       journeysFaded: false,
@@ -53,6 +52,9 @@ export default {
     },
     ctx: function() {
       return this.journeysCanvas.getContext("2d");
+    },
+    journeysContainer: function(){
+      return this.$refs["content-ref"]
     }
   },
 
@@ -60,6 +62,8 @@ export default {
 
   mounted() {
     // this.handleResize();
+    this.journeysCanvas.width = this.journeysContainer.clientWidth
+    this.journeysCanvas.height = this.journeysContainer.clientHeight
     this.frame();
     // this.initParticles(this.particleNumber, 0.982123, 0.982123);
     var x = Math.random(), y = Math.random();
@@ -207,5 +211,14 @@ export default {
   align-items: center;
   width: 100%;
   height: 100vh;
+}
+
+#template-container {
+  height: 100vh;
+  width: 100%;
+  /* overflow: scroll; */
+  transition: all 2s ease-out;
+
+  background-color: blue;
 }
 </style>
