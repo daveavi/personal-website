@@ -5,9 +5,9 @@
     <div id="container-social-icons" class="in-left2">
       <ul>
         <li v-for="brand in brandItems" v-bind:key="brand.id" class="social-icon" :id="brand.id">
-              <!-- <a :href="brand.link" :id="brand.id" class="href-class" target="_blank"> -->
+            <a :href="brand.link" :id="brand.id" class="href-class" target="_blank">
                 <fa-icon :icon="['fab', brand.id]" id="icon-size"/>
-              <!-- </a> -->
+            </a>
         </li>
       </ul>
     </div>
@@ -40,6 +40,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 @import "../css/profile.css";
+
 .button {
   width: 140px;
   height: 45px;
@@ -57,9 +58,7 @@ export default {
   transition: all 0.3s ease-out;
   cursor: pointer;
   outline: none;
-  /* margin-left: 50px;
-  margin-top: 90px;  */
-  /* position:relative; */
+
 }
 
 .button:hover {
@@ -69,11 +68,6 @@ export default {
 }
 .href-class{
   color:inherit;
-  transition: all 0.2s ease-out;
-  opacity: 0.65;
 }
-/* a:hover{
-  background-color:none;
-  text-decoration: none;
-} */
+
 </style>
