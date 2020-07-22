@@ -2,14 +2,15 @@
   <div id="template-container" ref="content-ref">
     <canvas ref="journeysCanvas" id="journeys-canvas" ></canvas>
     <!-- <h1 id="btn-journeys" class="animate__animated animate__fadeIn animate__delay-2s" v-on:click="expandCanvas()">Journeys</h1> -->
-    
-    <h1
-      ref="btnJourneys"
-      id="btn-journeys"
-      :class="{'faded': journeysFaded}"
-      class= "animate__animated animate__fadeIn animate__delay-2s"
-      v-on:click="startJourneys()"
-    >Journeys</h1>
+    <transition name="fade">
+      <h1
+        ref="btnJourneys"
+        id="btn-journeys"
+        class= "animate__animated animate__fadeIn animate__delay-2s"
+        v-on:click="startJourneys()"
+        v-if="journeysFadeIn"
+      >Journeys</h1>
+    </transition>
 
   </div>
 </template>
@@ -21,7 +22,7 @@ export default {
   name: "JourneysPreview",
   data() {
     return {
-      journeysFaded: false,
+      journeysFadeIn: true,
       config: {
         particleNumber: 400,
         maxParticleSize: 2,
@@ -53,6 +54,7 @@ export default {
     ctx: function() {
       return this.journeysCanvas.getContext("2d");
     },
+
     journeysContainer: function(){
       return this.$refs["content-ref"]
     }
@@ -61,21 +63,21 @@ export default {
   
 
   mounted() {
-    // this.handleResize();
+
     this.journeysCanvas.width = this.journeysContainer.clientWidth
     this.journeysCanvas.height = this.journeysContainer.clientHeight
+
     this.frame();
-    // this.initParticles(this.particleNumber, 0.982123, 0.982123);
     var x = Math.random(), y = Math.random();
     this.cleanUpArray();
     this.initParticles(this.config.particleNumber, x, y);
-    // this.particleInterval();
+
   },
   methods: {
 
     startJourneys() {
       this.$emit('start-journeys')
-      this.journeysFaded=true
+      this.journeysFadeIn=true
       setTimeout(() => this.$refs.btnJourneys.style.display = 'none', 200)
     },
         /**
@@ -99,6 +101,7 @@ export default {
         : (p.y -= (p.s * Math.sin(a)) / Math.sin(p.s));
       return p;
     },
+
     /**
      * Remove particles that aren't on the canvas
      */
@@ -127,18 +130,17 @@ export default {
      */
     frame() {
       this.drawBg(this.ctx, this.colorPalette.bg);
+     
       // Update Particle models to new position
       this.particles.map(p => {
         return this.updateParticleModel(p);
       });
 
-      // console.log(this.particles.length);
       // Draw em'
       this.particles.forEach(p => {
         this.drawParticle(p.x, p.y, p.r, p.c);
       });
-      // // Play the same song? Ok!
-      // window.requestAnimationFrame(frame);
+      
       requestAnimationFrame(this.frame);
     },
 
@@ -171,54 +173,4 @@ export default {
 <style scoped>
 @import "../css/animate.css";
 @import "../css/journeys.css";
-
-/* #btn-journeys {
-  display: inline-block;
-  padding: 0.3em;
-  font-family: "Megrim";
-  position: absolute;
-  top: 50%;
-  left: 65%;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  color: rgba(255, 255, 255, 0.68);
-  border: 0.075em solid rgba(255, 255, 255, 0.1);
-  transition: all 0.2s ease-out;
-}
-
-/* #btn-journeys:hover {
-  background-color: whitesmoke;
-  opacity: 0.65;
-  box-shadow: 0px 15px 20px rgba(46, 144, 229, 0.4);
-  color: #151515;
-  /* transform: translateY(-7px); */
-
-.faded {
-  transition: opacity 0.3s ease-out;
-  opacity: 0;
-}
-
-
-#journeys-canvas {
-  background-color: #151515;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
-}
-
-#template-container {
-  height: 100vh;
-  width: 100%;
-  /* overflow: scroll; */
-  transition: all 2s ease-out;
-
-  background-color: blue;
-}
 </style>

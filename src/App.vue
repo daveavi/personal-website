@@ -1,19 +1,11 @@
 <template>
-  <div id="app">
-    <!-- <div id="profile-container" :class="{zeroWidth: journeysStarted}">  "{ padding: $route.path === '/hello' ? '172px' : '0px' }" -->
-    <!-- <transition name="fade">
-      <div id="profile-container" :style="{width: intro === true ? '35%': '0px'}" v-if="intro">
-        <Profile/>
-      </div>
-    </transition> -->
-    
+  <div id="app">   
     <div id="profile-container" :style="{width: intro === true ? '35%': '0%'}">
       <transition name="fade">
         <Profile v-if="intro"/>
       </transition>
-      
     </div>
-    
+
     <div id="journeys-container" :style="{width: intro === true ? '65%': '100%'}" ref="journeysContainer">
       <JourneysPreview @start-journeys="startJourneys"/>
     </div>
@@ -35,17 +27,8 @@ export default {
   },
   data() {
     return {
-      intro: true,
-      // journeysContainer:{
-      //   width: this.$refs.journeysContainer.clientWidth,
-      //   height: this.$refs.journeysContainer.clientHeight
-      // }
+      intro: true
     };
-  },
-  computed: {
-    journeysContainer: function(){
-      return this.$refs.journeysContainer
-    }
   },
   methods: {
     startJourneys: function() {
@@ -57,16 +40,6 @@ export default {
   }
   
 }
-
-    // handleResize: function() {
-    //   // Calculate new canvas size based on window
-    //   this.journeysCanvas.width = this.journeysCanvas.clientWidth;
-    //   this.journeysCanvas.height = this.journeysCanvas.clientHeight;
-    //   // this.drawBg(this.ctx, this.colorPalette.bg);
-    //   this.$nextTick(() => {
-    //     this.frame();
-    //   });
-    // },  
 
 </script>
 
@@ -83,6 +56,7 @@ export default {
   flex-direction: column;
   transition: all 2s ease;
   justify-content: center;
+  
 }
 #journeys-container {
   height: 100vh;

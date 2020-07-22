@@ -4,26 +4,11 @@
     <h2 id="profile-description" class="in-left2">soul-seeker, beat-maker, problem-solver</h2>
     <div id="container-social-icons" class="in-left2">
       <ul>
-        <li class="social-icon" id="github">
-          <fa-icon :icon="['fab', 'github']" id="icon-size"/>
+        <li v-for="brand in brandItems" v-bind:key="brand.id" class="social-icon" :id="brand.id">
+              <!-- <a :href="brand.link" :id="brand.id" class="href-class" target="_blank"> -->
+                <fa-icon :icon="['fab', brand.id]" id="icon-size"/>
+              <!-- </a> -->
         </li>
-
-        <li class="social-icon" id="linkedin">
-          <fa-icon :icon="['fab', 'linkedin']" id="icon-size"/>
-        </li>
-
-        <li class="social-icon" id="soundcloud">
-          <fa-icon :icon="['fab', 'soundcloud']" id="icon-size"/>
-        </li>
-
-        <li class="social-icon" id="youtube">
-          <fa-icon :icon="['fab', 'youtube']" id="icon-size"/>
-        </li>
-        <!-- <li v-for="brand in brands"  v-bind:key="brand" class="social-icon" :id="brand">
-              {brand}
-              <fa-icon :icon="['fab', {brand}]" id="icon-size"/>
-        </li> -->
-
       </ul>
     </div>
 
@@ -36,7 +21,12 @@ export default {
   name: "Profile",
   data() {
     return {
-      brands: ["github", "linkedin", "soundcloud", "youtube"]
+      brandItems: [
+        {id:'github', link:'https://github.com/daveavi'}, 
+        {id:'linkedin', link:'https://www.linkedin.com/in/avi-dave-854715164/'},
+        {id:'soundcloud', link:'https://soundcloud.com/avi-dave-524207111'}, 
+        {id:'youtube', link:'https://www.youtube.com/channel/UChPDyZOW04fFha6RBIBzDBQ?view_as=subscriber'}
+      ]
     };
   },
   methods: {
@@ -77,4 +67,13 @@ export default {
   color: #fff;
   transform: translateY(-7px);
 }
+.href-class{
+  color:inherit;
+  transition: all 0.2s ease-out;
+  opacity: 0.65;
+}
+/* a:hover{
+  background-color:none;
+  text-decoration: none;
+} */
 </style>
