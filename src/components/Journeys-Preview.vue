@@ -43,7 +43,8 @@ export default {
         window.requestAnimationFrame ||
         window.mozRequestAnimationFrame ||
         window.webkitRequestAnimationFrame ||
-        window.msRequestAnimationFrame
+        window.msRequestAnimationFrame,
+      particleInterval: null,
     };
   },
 
@@ -70,7 +71,14 @@ export default {
     this.frame();
     var x = Math.random(), y = Math.random();
     this.cleanUpArray();
-    this.initParticles(this.config.particleNumber, x, y);
+
+    
+    setTimeout(()=>{
+      this.initParticles(this.config.particleNumber, x, y);
+    },2000);
+
+    this.setInterval();
+    this.stopInterval();
 
   },
   methods: {
@@ -159,12 +167,14 @@ export default {
       this.ctx.closePath();
     },
 
-    particleInterval() {
-      setInterval(() => this.showParticles(), 5000);
+    setInterval() {
+      this.particleInterval = setInterval(() => this.showParticles(), 5000);
     },
     stopInterval() {
-      clearInterval(this.particleInterval);
-    },
+      setTimeout(()=>{
+        clearInterval(this.particleInterval)
+      }, 20000);
+    }
   }
 };
 </script>

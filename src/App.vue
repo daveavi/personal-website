@@ -9,6 +9,7 @@
     <div id="journeys-container" :style="{width: intro === true ? '65%': '100%'}" ref="journeysContainer">
       <JourneysPreview @start-journeys="startJourneys"/>
     </div>
+    
   </div>
 </template>
 
