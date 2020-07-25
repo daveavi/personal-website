@@ -9,8 +9,10 @@
     <div id="journeys-container" :style="{width: intro === true ? '65%': '100%'}" ref="journeysContainer">
       <transition name="fade">
         <JourneysPreview  v-if="preImage" ref="journeysPreview" @start-journeys="startJourneys"/>
+        <img class="animate__animated animate__fadeIn animate__delay-1s"  id="journeysCover" src="../public/beattape-cover.jpg">
       </transition>
-
+      
+      
 
     </div>
 
@@ -41,17 +43,19 @@ export default {
       console.log("Starting Journeys from App")
       console.log(this.$refs['journeysContainer'])
       this.intro = false;
-      //  var track = new Audio("./cloud.wav");
+      // var track = new Audio("./Samsara.mp3");
       setTimeout(() => {
         this.$refs.journeysPreview.frame();
         this.$refs.journeysPreview.cleanUpArray();
         this.$refs.journeysPreview.particleRotation();
-
+        // track.play()
       }, 2000);
       
       setTimeout(() => {
         this.preImage = false;
       }, 20000);
+
+
 
 
 
@@ -63,6 +67,7 @@ export default {
 </script>
 
 <style>
+@import "css/animate.css";
 #app {
   width: 100%;
   height: 100vh;
@@ -82,8 +87,14 @@ export default {
   width: 65%;
   /* overflow: scroll; */
   transition: all 2s ease-out;
-
   background-color: black;
+}
+#journeysCover{
+  width:400px;
+  height:400px;
+  margin-left: 200px;
+  margin-top: 100px
+
 }
 
 

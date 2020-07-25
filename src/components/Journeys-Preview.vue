@@ -2,7 +2,7 @@
   <div id="template-container" ref="content-ref">
     <canvas ref="journeysCanvas" id="journeys-canvas" >
     </canvas>
-    <!-- <h1 id="btn-journeys" class="animate__animated animate__fadeIn animate__delay-2s" v-on:click="expandCanvas()">Journeys</h1> -->
+
     <transition name="fade">
       <h1
         ref="btnJourneys"
@@ -12,7 +12,8 @@
         v-if="journeysFadeIn"
       >Journeys</h1>
     </transition>
-    <!-- <img src="../../public/beattape-cover.jpg"> -->
+
+    
 
 
   </div>
@@ -173,6 +174,7 @@ export default {
     stopInterval() {
       clearInterval(this.particleInterval);
     },
+
     particleRotation(){ 
       var x = Math.random(), y = Math.random();
       setTimeout(()=>{
