@@ -7,7 +7,7 @@
         <li v-for="brand in brandItems" v-bind:key="brand.id" class="social-icon" :id="brand.id">
             <a :href="brand.link" :id="brand.id" class="href-class" target="_blank">
                 <fa-icon :icon="['fab', brand.id]" id="icon-size"/>
-            </a>
+            </a> 
         </li>
       </ul>
     </div>

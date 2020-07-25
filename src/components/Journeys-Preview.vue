@@ -1,6 +1,7 @@
 <template>
   <div id="template-container" ref="content-ref">
-    <canvas ref="journeysCanvas" id="journeys-canvas" ></canvas>
+    <canvas ref="journeysCanvas" id="journeys-canvas" >
+    </canvas>
     <!-- <h1 id="btn-journeys" class="animate__animated animate__fadeIn animate__delay-2s" v-on:click="expandCanvas()">Journeys</h1> -->
     <transition name="fade">
       <h1
@@ -11,6 +12,8 @@
         v-if="journeysFadeIn"
       >Journeys</h1>
     </transition>
+    <!-- <img src="../../public/beattape-cover.jpg"> -->
+
 
   </div>
 </template>
@@ -45,6 +48,7 @@ export default {
         window.webkitRequestAnimationFrame ||
         window.msRequestAnimationFrame,
       particleInterval: null,
+      journeysImage: '<img src="./beattape-cover.jpg">',
     };
   },
 
@@ -69,16 +73,11 @@ export default {
     this.journeysCanvas.height = this.journeysContainer.clientHeight
 
     this.frame();
-    var x = Math.random(), y = Math.random();
     this.cleanUpArray();
 
     
-    setTimeout(()=>{
-      this.initParticles(this.config.particleNumber, x, y);
-    },2000);
-
-    this.setInterval();
-    this.stopInterval();
+    this.particleRotation();
+    
 
   },
   methods: {
@@ -86,6 +85,8 @@ export default {
     startJourneys() {
       this.$emit('start-journeys')
       this.journeysFadeIn=true
+      this.stopInterval();
+      // this.startNewCanvas()
       setTimeout(() => this.$refs.btnJourneys.style.display = 'none', 200)
     },
         /**
@@ -120,8 +121,6 @@ export default {
     },
 
     initParticles(numParticles, x, y) {
-      console.log(x);
-      console.log(y);
       for (let i = 0; i < numParticles; i++) {
         this.particles.push(
           new Particle(x, y, this.canvas, this.config, this.colorPalette)
@@ -170,11 +169,22 @@ export default {
     setInterval() {
       this.particleInterval = setInterval(() => this.showParticles(), 5000);
     },
+
     stopInterval() {
+      clearInterval(this.particleInterval);
+    },
+    particleRotation(){ 
+      var x = Math.random(), y = Math.random();
       setTimeout(()=>{
-        clearInterval(this.particleInterval)
-      }, 20000);
+        this.initParticles(this.config.particleNumber, x, y);
+      },2000);
+
+      this.setInterval();
+      setTimeout(()=>{
+          this.stopInterval()
+        }, 20000);
     }
+
   }
 };
 </script>

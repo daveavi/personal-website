@@ -7,9 +7,13 @@
     </div>
 
     <div id="journeys-container" :style="{width: intro === true ? '65%': '100%'}" ref="journeysContainer">
-      <JourneysPreview @start-journeys="startJourneys"/>
+      <transition name="fade">
+        <JourneysPreview  v-if="preImage" ref="journeysPreview" @start-journeys="startJourneys"/>
+      </transition>
+
+
     </div>
-    
+
   </div>
 </template>
 
@@ -28,7 +32,8 @@ export default {
   },
   data() {
     return {
-      intro: true
+      intro: true,
+      preImage: true
     };
   },
   methods: {
@@ -36,6 +41,19 @@ export default {
       console.log("Starting Journeys from App")
       console.log(this.$refs['journeysContainer'])
       this.intro = false;
+      //  var track = new Audio("./cloud.wav");
+      setTimeout(() => {
+        this.$refs.journeysPreview.frame();
+        this.$refs.journeysPreview.cleanUpArray();
+        this.$refs.journeysPreview.particleRotation();
+
+      }, 2000);
+      
+      setTimeout(() => {
+        this.preImage = false;
+      }, 20000);
+
+
 
     }
   }
@@ -65,7 +83,7 @@ export default {
   /* overflow: scroll; */
   transition: all 2s ease-out;
 
-  background-color: blue;
+  background-color: black;
 }
 
 
