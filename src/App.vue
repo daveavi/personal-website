@@ -6,10 +6,10 @@
       </transition>
     </div>
 
-    <div id="journeys-container" :style="{width: intro === true ? '65%': '100%'}" ref="journeysContainer">
+    <div id="preview-container" :style="{width: intro === true ? '65%': '100%'}" ref="previewContainer">
       <transition name="fade">
         <JourneysPreview  v-if="preImage" ref="journeysPreview" @start-journeys="startJourneys"/>
-        <img class="animate__animated animate__fadeIn animate__delay-1s"  id="journeysCover" src="../public/beattape-cover.jpg">
+        <Journeys v-else/>
       </transition>
       
       
@@ -22,12 +22,13 @@
 <script>
 import Profile from "./components/Profile.vue";
 import JourneysPreview from "./components/Journeys-Preview.vue";
-
+import Journeys from "./components/Journeys.vue";
 export default {
   name: "App",
   components: {
     Profile,
-    JourneysPreview
+    JourneysPreview,
+    Journeys
   },
   created() {
     window.addEventListener("resize", this.handleResize);
@@ -41,7 +42,7 @@ export default {
   methods: {
     startJourneys: function() {
       console.log("Starting Journeys from App")
-      console.log(this.$refs['journeysContainer'])
+      console.log(this.$refs['previewContainer'])
       this.intro = false;
       // var track = new Audio("./Samsara.mp3");
       setTimeout(() => {
@@ -82,19 +83,12 @@ export default {
   justify-content: center;
   
 }
-#journeys-container {
+#preview-container {
   height: 100vh;
   width: 65%;
   /* overflow: scroll; */
   transition: all 2s ease-out;
   background-color: black;
-}
-#journeysCover{
-  width:400px;
-  height:400px;
-  margin-left: 200px;
-  margin-top: 100px
-
 }
 
 
@@ -106,7 +100,7 @@ export default {
 @media screen() {
   #profile-container {
   }
-  #journeys-container {
+  #preview-container {
   }
 }
 </style>
