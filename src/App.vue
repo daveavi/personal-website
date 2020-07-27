@@ -1,5 +1,6 @@
 <template>
   <div id="app">   
+    
     <div id="profile-container" :style="{width: intro === true ? '35%': '0%'}">
       <transition name="fade">
         <Profile v-if="intro"/>
