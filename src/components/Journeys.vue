@@ -2,11 +2,12 @@
   <div id="journeys-container" ref="journeysContainer">
        <img class="animate__animated animate__fadeIn animate__delay-1s"  id="journeysCover" src="../../public/beattape-cover.jpg">
        <div class="description">
-            <p id="collection"> Finally decided it was time to put out a collection of 
-            my favourite loops and instrumentals I produced from Feb 2019 - March 2020. It was not until December 2018, I decided to download a digital audio workshop (software to produce music) called Ableton, and learn how to make beats.  guess when you face extreme boredom but are also in an age of discovering yourself,  creative ideas come out naturally in the process I love hip hop music ever since I was a kid and it has been a dream of mine to DJ and make beats. 
-            </p>
-            <h2> Journeys is avaibale to buy on bandcamp! Go check it out!</h2>
+            <h1 id="promo"> Journeys is now available on 
+                <fa-icon :icon="['fab', 'bandcamp']" id="bandcamp-size"/> </h1> 
+            <br>
+            <h3 id="sub-promo"> A journey pictured through raw loops and instrumental. Peace <fa-icon icon="hand-peace"/> </h3>
        </div>
+
 
 
     
@@ -27,8 +28,9 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 @import "../css/animate.css";
+
 #journeys-container {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   /* overflow: scroll; */
   min-width: 960px;
@@ -38,25 +40,34 @@ export default {
   color: white;
   display: flex;
   flex-direction: row;
-  justify-content: space-between
+  justify-content: space-around;
+  overflow-x: auto;
 }
+
 #journeysCover{
-  width:400px;
-  height:400px;
+  width:600px;
+  height:600px;
+  position:center;
   margin-left: 150px;
   margin-top: 100px;
 }
+
 .description{
-    padding-bottom: 450px;
-    padding-right: 400px;
-    padding-left:100px;
-    /* position: relative; */
-    min-width: 1000px;
+    margin-bottom: 200px; 
+    margin-right: 400px;
+    margin-left:100px; 
+    position: relative;
+    /* min-width: 1000px; */
     display:flex;
     flex-direction: column;
     align-self: center;
+    font-style: italic;
 }
 
+#promo{
+    font-style: italic;
+    font-size:80px;
+}
  
 /* 
 #out{

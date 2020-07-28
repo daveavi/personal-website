@@ -4,9 +4,10 @@ import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import App from './App.vue'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { faHandPeace } from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faLinkedin,faSoundcloud, faBandcamp, faYoutube }  from '@fortawesome/free-brands-svg-icons'
 
-library.add(faGithub, faLinkedin,faSoundcloud, faBandcamp, faYoutube);
+library.add(faGithub, faLinkedin,faSoundcloud, faBandcamp, faYoutube, faHandPeace);
 Vue.component('fa-icon', FontAwesomeIcon);
 
 import 'bootstrap/dist/css/bootstrap.css'
