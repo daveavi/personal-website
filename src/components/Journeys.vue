@@ -8,7 +8,7 @@
              </a>
             </h1> 
             <br>
-            <h3 id="sub-promo"> A journey pictured through raw loops and instrumental. Peace <fa-icon icon="hand-peace"/> </h3>
+            <h3 id="sub-promo"> A journey illustrated through raw loops and instrumental. Peace <fa-icon icon="hand-peace"/> </h3>
        </div>
 
 
