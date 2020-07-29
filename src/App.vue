@@ -42,17 +42,16 @@ export default {
   },
   methods: {
     startJourneys: function() {
-      console.log("Starting Journeys from App")
-      console.log(this.$refs['previewContainer'])
       this.intro = false;
-      // var track = new Audio("./Samsara.mp3");
+      var track = new Audio("./Darjeelingtea.mp3");
 
       setTimeout(() => {
-        this.$refs.journeysPreview.setCanvas();
+        // this.$refs.journeysPreview.setCanvas();
         this.$refs.journeysPreview.frame();
         this.$refs.journeysPreview.cleanUpArray();
-        this.$refs.journeysPreview.particleRotation();
-        // track.play()
+        this.$refs.journeysPreview.initParticles();
+        this.$refs.journeysPreview.setInterval();
+        track.play()
       }, 2000);
       
       setTimeout(() => {

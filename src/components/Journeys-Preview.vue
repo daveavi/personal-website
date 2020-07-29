@@ -49,7 +49,6 @@ export default {
         window.webkitRequestAnimationFrame ||
         window.msRequestAnimationFrame,
       particleInterval: null,
-      journeysImage: '<img src="./beattape-cover.jpg">',
     };
   },
 

@@ -1,7 +1,7 @@
 <template>
   <div id="journeys-container" ref="journeysContainer">
-       <img class="animate__animated animate__fadeIn animate__delay-1s"  id="journeysCover" src="../../public/beattape-cover.jpg">
-       <div class="description">
+       <img class="animate__animated animate__fadeInDown animate__delay-1s"  id="journeysCover" src="../../public/beattape-cover.jpg">
+       <div class="description animate__animated animate__fadeInRight animate__delay-2s">
             <h1 id="promo"> Journeys is now available on 
                 <a href="https://avidave.bandcamp.com/releases" class="href-class" target="_blank">
                     <fa-icon :icon="['fab', 'bandcamp']" id="bandcamp-size" />
