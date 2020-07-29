@@ -3,7 +3,10 @@
        <img class="animate__animated animate__fadeIn animate__delay-1s"  id="journeysCover" src="../../public/beattape-cover.jpg">
        <div class="description">
             <h1 id="promo"> Journeys is now available on 
-                <fa-icon :icon="['fab', 'bandcamp']" id="bandcamp-size"/> </h1> 
+             <a href="https://avidave.bandcamp.com/releases" class="href-class" target="_blank">
+                <fa-icon :icon="['fab', 'bandcamp']" id="bandcamp-size" />
+             </a>
+            </h1> 
             <br>
             <h3 id="sub-promo"> A journey pictured through raw loops and instrumental. Peace <fa-icon icon="hand-peace"/> </h3>
        </div>
@@ -69,11 +72,18 @@ export default {
     font-size:80px;
 }
  
-/* 
-#out{
-    display:flex;
-    align-self: center;
-} */
+#bandcamp-size:hover{
+    /* background-color: black; */
+    transition: all 0.2s ease-out;
+    color:#629aa9; 
+    outline: none;
+}
+
+.href-class{
+  color:inherit;
+
+}
+
 
 
 
