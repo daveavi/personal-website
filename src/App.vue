@@ -1,12 +1,12 @@
 <template>
   <div id="app">   
-    
+
     <div id="profile-container" :style="{width: intro === true ? '35%': '0%'}">
       <transition name="fade">
         <Profile v-if="intro"/>
       </transition>
     </div>
-
+  
     <div id="preview-container" :style="{width: intro === true ? '65%': '100%'}" ref="previewContainer">
       <transition name="fade">
         <JourneysPreview  v-if="preImage" ref="journeysPreview" @start-journeys="startJourneys"/>
@@ -46,7 +46,9 @@ export default {
       console.log(this.$refs['previewContainer'])
       this.intro = false;
       // var track = new Audio("./Samsara.mp3");
+
       setTimeout(() => {
+        this.$refs.journeysPreview.setCanvas();
         this.$refs.journeysPreview.frame();
         this.$refs.journeysPreview.cleanUpArray();
         this.$refs.journeysPreview.particleRotation();
@@ -55,7 +57,7 @@ export default {
       
       setTimeout(() => {
         this.preImage = false;
-      }, 20000);
+      }, 30000);
 
 
 

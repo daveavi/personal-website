@@ -13,7 +13,7 @@
       >Journeys</h1>
     </transition>
 
-    
+
 
 
   </div>
@@ -70,13 +70,9 @@ export default {
 
   mounted() {
 
-    this.journeysCanvas.width = this.journeysContainer.clientWidth
-    this.journeysCanvas.height = this.journeysContainer.clientHeight
-
+    this.setCanvas();
     this.frame();
     this.cleanUpArray();
-
-    
     this.particleRotation();
     
 
@@ -87,10 +83,10 @@ export default {
       this.$emit('start-journeys')
       this.journeysFadeIn=true
       this.stopInterval();
-      // this.startNewCanvas()
       setTimeout(() => this.$refs.btnJourneys.style.display = 'none', 200)
     },
-        /**
+    
+    /**
      * Draws the background for the canvas, because space
      */
     drawBg(ctx, color) {
@@ -184,7 +180,12 @@ export default {
       this.setInterval();
       setTimeout(()=>{
           this.stopInterval()
-        }, 20000);
+        }, 30000);
+    },
+
+    setCanvas(){
+      this.journeysCanvas.width = this.journeysContainer.clientWidth
+      this.journeysCanvas.height = this.journeysContainer.clientHeight
     }
 
   }
