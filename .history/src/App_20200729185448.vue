@@ -64,7 +64,7 @@ export default {
 
       setTimeout(() => {
         this.preImage = false;
-      }, 5000);
+      }, 10000);
 
 
 

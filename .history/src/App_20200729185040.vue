@@ -59,12 +59,11 @@ export default {
         this.$refs.journeysPreview.initParticles();
         this.$refs.journeysPreview.setInterval();
         track.play()
-        track.volume = 0;
       }, 2000);
 
       setTimeout(() => {
         this.preImage = false;
-      }, 5000);
+      }, 30000);
 
 
 

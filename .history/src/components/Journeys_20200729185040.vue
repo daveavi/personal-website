@@ -22,11 +22,9 @@
         </a>
       </h1>
       <br>
-      <h3 id="sub-promo"> A journey illustrated through raw loops and instrumentals. <br/>Peace
+      <h3 id="sub-promo"> A journey illustrated through raw loops and instrumentals. Peace
         <fa-icon icon="hand-peace" />
       </h3>
-
-      <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=92492663/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/track=997639809/transparent=true/" seamless><a href="http://avidave.bandcamp.com/album/journeys">Journeys by avidavé</a></iframe>
     </div>
 
   </div>

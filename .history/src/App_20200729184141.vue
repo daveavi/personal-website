@@ -1,29 +1,22 @@
 <template>
-  <div id="app">
+  <div id="app">   
 
-    <div
-      id="profile-container"
-      :style="{width: intro === true ? '35%': '0%'}"
-    >
+    <div id="profile-container" :style="{width: intro === true ? '35%': '0%'}">
       <transition name="fade">
-        <Profile v-if="intro" />
+        <Profile v-if="intro"/>
       </transition>
     </div>
-
-    <div
-      id="preview-container"
-      :style="{width: intro === true ? '65%': '100%'}"
-      ref="previewContainer"
-    >
+  
+    <div id="preview-container" :style="{width: intro === true ? '65%': '100%'}" ref="previewContainer">
       <transition name="fade">
-        <JourneysPreview
-          v-if="preImage"
-          ref="journeysPreview"
-          @start-journeys="startJourneys"
-        />
-        <Journeys v-else />
+        <JourneysPreview  v-if="preImage" ref="journeysPreview" @start-journeys="startJourneys"/>
+        <Journeys v-else/>
       </transition>
+      
+      
+
     </div>
+
   </div>
 </template>
 
@@ -38,17 +31,17 @@ export default {
     JourneysPreview,
     Journeys
   },
-  created () {
+  created() {
     window.addEventListener("resize", this.handleResize);
   },
-  data () {
+  data() {
     return {
       intro: true,
       preImage: true
     };
   },
   methods: {
-    startJourneys: function () {
+    startJourneys: function() {
       this.intro = false;
       var track = new Audio("./Darjeelingtea.mp3");
 
@@ -59,12 +52,11 @@ export default {
         this.$refs.journeysPreview.initParticles();
         this.$refs.journeysPreview.setInterval();
         track.play()
-        track.volume = 0;
       }, 2000);
-
+      
       setTimeout(() => {
         this.preImage = false;
-      }, 5000);
+      }, 30000);
 
 
 
@@ -72,7 +64,7 @@ export default {
 
     }
   }
-
+  
 }
 
 </script>
@@ -91,6 +83,7 @@ export default {
   flex-direction: column;
   transition: all 2s ease;
   justify-content: center;
+  
 }
 #preview-container {
   height: 100vh;
@@ -99,6 +92,9 @@ export default {
   transition: all 2s ease-out;
   background-color: black;
 }
+
+
+
 </style>
 
 
