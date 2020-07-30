@@ -1,27 +1,42 @@
 <template>
-  <div id="journeys-container" ref="journeysContainer">
-       <img class="animate__animated animate__fadeInDown animate__delay-1s"  id="journeysCover" src="../../public/beattape-cover.jpg">
-       <div class="description animate__animated animate__fadeInRight animate__delay-2s">
-            <h1 id="promo"> Journeys is now available on 
-                <a href="https://avidave.bandcamp.com/releases" class="href-class" target="_blank">
-                    <fa-icon :icon="['fab', 'bandcamp']" id="bandcamp-size" />
-                </a>
-            </h1> 
-            <br>
-            <h3 id="sub-promo"> A journey illustrated through raw loops and instrumentals. Peace <fa-icon icon="hand-peace"/> </h3>
-       </div>
+  <div
+    id="journeys-container"
+    ref="journeysContainer"
+  >
+    <img
+      class="animate__animated animate__fadeInDown animate__delay-1s"
+      id="journeysCover"
+      src="../../public/beattape-cover.jpg"
+    >
+    <div class="description animate__animated animate__fadeInRight animate__delay-2s">
+      <h1 id="promo"> Journeys is now available on
+        <a
+          href="https://avidave.bandcamp.com/releases"
+          class="href-class"
+          target="_blank"
+        >
+          <fa-icon
+            :icon="['fab', 'bandcamp']"
+            id="bandcamp-size"
+          />
+        </a>
+      </h1>
+      <br>
+      <h3 id="sub-promo"> A journey illustrated through raw loops and instrumentals. <br/>Peace
+        <fa-icon icon="hand-peace" />
+      </h3>
 
+      <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=92492663/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/track=997639809/transparent=true/" seamless><a href="http://avidave.bandcamp.com/album/journeys">Journeys by avidavé</a></iframe>
+    </div>
 
-
-    
-</div>
+  </div>
 </template>
 
 <script>
 
 export default {
   name: "Journeys",
-  data() {
+  data () {
     return {
     };
   },
@@ -47,44 +62,39 @@ export default {
   overflow-x: auto;
 }
 
-#journeysCover{
-  width:600px;
-  height:600px;
-  position:center;
+#journeysCover {
+  width: 600px;
+  height: 600px;
+  position: center;
   margin-left: 250px;
   margin-top: 100px;
 }
 
-.description{
-    margin-bottom: 200px; 
-    margin-right: 400px;
-    margin-left:100px; 
-    position: relative;
-    /* min-width: 1000px; */
-    display:flex;
-    flex-direction: column;
-    align-self: center;
-    font-style: italic;
+.description {
+  margin-bottom: 200px;
+  margin-right: 400px;
+  margin-left: 100px;
+  position: relative;
+  /* min-width: 1000px; */
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  font-style: italic;
 }
 
-#promo{
-    font-style: italic;
-    font-size:70px;
-}
- 
-#bandcamp-size:hover{
-    /* background-color: black; */
-    transition: all 0.2s ease-out;
-    color:#629aa9; 
-    outline: none;
+#promo {
+  font-style: italic;
+  font-size: 70px;
 }
 
-.href-class{
-  color:inherit;
-
+#bandcamp-size:hover {
+  /* background-color: black; */
+  transition: all 0.2s ease-out;
+  color: #629aa9;
+  outline: none;
 }
 
-
-
-
+.href-class {
+  color: inherit;
+}
 </style>
