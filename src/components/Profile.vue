@@ -1,18 +1,32 @@
 <template>
   <div class="p-4">
     <h1 id="profile-name" class="display-4 in-left">Avi Dave</h1>
-    <h2 id="profile-description" class="in-left2">soul-seeker, beat-maker, problem-solver</h2>
+    <h2 id="profile-description" class="in-left2">
+      soul-seeker, beat-maker, problem-solver
+    </h2>
     <div id="container-social-icons" class="in-left2">
       <ul>
-        <li v-for="brand in brandItems" v-bind:key="brand.id" class="social-icon" :id="brand.id">
-            <a :href="brand.link" :id="brand.id" class="href-class" target="_blank">
-                <fa-icon :icon="['fab', brand.id]" id="icon-size"/>
-            </a> 
+        <li
+          v-for="brand in brandItems"
+          v-bind:key="brand.id"
+          class="social-icon"
+          :id="brand.id"
+        >
+          <a
+            :href="brand.link"
+            :id="brand.id"
+            class="href-class"
+            target="_blank"
+          >
+            <fa-icon :icon="['fab', brand.id]" id="icon-size" />
+          </a>
         </li>
       </ul>
     </div>
 
-    <button class="button in-left2" v-on:click="openPdf()" target="_blank">Resume</button>
+    <button class="button in-left2" v-on:click="openPdf()" target="_blank">
+      Resume
+    </button>
   </div>
 </template>
 
@@ -22,18 +36,19 @@ export default {
   data() {
     return {
       brandItems: [
-        {id:'github', link:'https://github.com/daveavi'}, 
-        {id:'linkedin', link:'https://www.linkedin.com/in/avi-dave-854715164/'},
-        {id:'soundcloud', link:'https://soundcloud.com/avi-dave-524207111'}, 
-        {id:'youtube', link:'https://www.youtube.com/channel/UChPDyZOW04fFha6RBIBzDBQ?view_as=subscriber'}
-      ]
+        { id: "github", link: "https://github.com/daveavi" },
+        {
+          id: "linkedin",
+          link: "https://www.linkedin.com/in/avi-dave-854715164/",
+        },
+      ],
     };
   },
   methods: {
     openPdf() {
       window.open("./Avi-Dave-Resume.pdf", "_blank");
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -57,16 +72,14 @@ export default {
   transition: all 0.3s ease-out;
   cursor: pointer;
   outline: none;
-
 }
 
 .button:hover {
-  background-color: #211F1F;
+  background-color: #211f1f;
   color: #fff;
   transform: translateY(-7px);
 }
-.href-class{
-  color:inherit;
+.href-class {
+  color: inherit;
 }
-
 </style>

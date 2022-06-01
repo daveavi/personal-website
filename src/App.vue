@@ -1,9 +1,8 @@
 <template>
   <div id="app">
-
     <div
       id="profile-container"
-      :style="{width: intro === true ? '35%': '0%'}"
+      :style="{ width: intro === true ? '35%' : '0%' }"
     >
       <transition name="fade">
         <Profile v-if="intro" />
@@ -12,7 +11,7 @@
 
     <div
       id="preview-container"
-      :style="{width: intro === true ? '65%': '100%'}"
+      :style="{ width: intro === true ? '65%' : '100%' }"
       ref="previewContainer"
     >
       <transition name="fade">
@@ -36,19 +35,19 @@ export default {
   components: {
     Profile,
     JourneysPreview,
-    Journeys
+    Journeys,
   },
-  created () {
+  created() {
     window.addEventListener("resize", this.handleResize);
   },
-  data () {
+  data() {
     return {
       intro: true,
-      preImage: true
+      preImage: true,
     };
   },
   methods: {
-    startJourneys: function () {
+    startJourneys: function() {
       this.intro = false;
       var track = new Audio("./Darjeelingtea.mp3");
 
@@ -58,23 +57,16 @@ export default {
         this.$refs.journeysPreview.cleanUpArray();
         this.$refs.journeysPreview.initParticles();
         this.$refs.journeysPreview.setInterval();
-        track.play()
+        track.play();
         track.volume = 0;
       }, 2000);
 
       setTimeout(() => {
         this.preImage = false;
       }, 5000);
-
-
-
-
-
-    }
-  }
-
-}
-
+    },
+  },
+};
 </script>
 
 <style>
@@ -101,12 +93,4 @@ export default {
 }
 </style>
 
-
-<style>
-@media screen() {
-  #profile-container {
-  }
-  #preview-container {
-  }
-}
-</style>
+<style></style>
