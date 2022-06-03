@@ -70,7 +70,6 @@ export default {
 </script>
 
 <style>
-@import "css/animate.css";
 #app {
   width: 100%;
   height: 100vh;

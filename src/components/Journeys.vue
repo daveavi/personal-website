@@ -1,52 +1,52 @@
 <template>
-  <div
-    id="journeys-container"
-    ref="journeysContainer"
-  >
+  <div id="journeys-container" ref="journeysContainer">
     <img
       class="animate__animated animate__fadeInDown animate__delay-1s"
       id="journeysCover"
       src="../../public/beattape-cover.jpg"
+    />
+    <div
+      class="description animate__animated animate__fadeInRight animate__delay-2s"
     >
-    <div class="description animate__animated animate__fadeInRight animate__delay-2s">
-      <h1 id="promo"> Journeys is now available on
+      <h1 id="promo">
+        Journeys is now available on
         <a
           href="https://avidave.bandcamp.com/releases"
           class="href-class"
           target="_blank"
         >
-          <fa-icon
-            :icon="['fab', 'bandcamp']"
-            id="bandcamp-size"
-          />
+          <fa-icon :icon="['fab', 'bandcamp']" id="bandcamp-size" />
         </a>
       </h1>
-      <br>
-      <h3 id="sub-promo"> A journey illustrated through raw loops and instrumentals. <br/>Peace
+      <br />
+      <h3 id="sub-promo">
+        A journey illustrated through raw loops and instrumentals. <br />Peace
         <fa-icon icon="hand-peace" />
       </h3>
 
-      <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=92492663/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/track=997639809/transparent=true/" seamless><a href="http://avidave.bandcamp.com/album/journeys">Journeys by avidavé</a></iframe>
+      <iframe
+        style="border: 0; width: 100%; height: 120px;"
+        src="https://bandcamp.com/EmbeddedPlayer/album=92492663/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/track=997639809/transparent=true/"
+        seamless
+        ><a href="http://avidave.bandcamp.com/album/journeys"
+          >Journeys by avidavé</a
+        ></iframe
+      >
     </div>
-
   </div>
 </template>
 
 <script>
-
 export default {
   name: "Journeys",
-  data () {
-    return {
-    };
+  data() {
+    return {};
   },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-@import "../css/animate.css";
-
 #journeys-container {
   height: 100%;
   width: 100%;

@@ -46,7 +46,7 @@ export default {
   },
   methods: {
     openPdf() {
-      window.open("./Avi-Dave-Resume.pdf", "_blank");
+      window.open("..//Avi-Dave-Resume.pdf", "_blank");
     },
   },
 };
