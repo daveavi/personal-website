@@ -1,9 +1,6 @@
 <template>
   <div id="app">
-    <div
-      id="profile-container"
-      :style="{ width: intro === true ? '35%' : '0%' }"
-    >
+    <div id="profile-container" :style="{ width: '35%' }">
       <transition name="fade">
         <Profile v-if="intro" />
       </transition>
@@ -11,7 +8,7 @@
 
     <div
       id="preview-container"
-      :style="{ width: intro === true ? '65%' : '100%' }"
+      :style="{ width: '65%' }"
       ref="previewContainer"
     >
       <transition name="fade">
@@ -46,26 +43,7 @@ export default {
       preImage: true,
     };
   },
-  methods: {
-    startJourneys: function() {
-      this.intro = false;
-      var track = new Audio("./Darjeelingtea.mp3");
-
-      setTimeout(() => {
-        // this.$refs.journeysPreview.setCanvas();
-        this.$refs.journeysPreview.frame();
-        this.$refs.journeysPreview.cleanUpArray();
-        this.$refs.journeysPreview.initParticles();
-        this.$refs.journeysPreview.setInterval();
-        track.play();
-        track.volume = 0;
-      }, 2000);
-
-      setTimeout(() => {
-        this.preImage = false;
-      }, 5000);
-    },
-  },
+  methods: {},
 };
 </script>
 
@@ -84,11 +62,9 @@ export default {
   justify-content: center;
 }
 #preview-container {
-  height: 100vh;
   width: 65%;
-  /* overflow: scroll; */
+  overflow: scroll;
   transition: all 2s ease-out;
-  background-color: black;
 }
 </style>
 
